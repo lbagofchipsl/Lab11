@@ -1,68 +1,51 @@
-# Lab04
+# Lab11
+
+Must follow standards cited here: https://github.com/olekaspt/LabStandards/blob/main/README.md
 
 ## Objective:
-The objective of this homework is to investigate different sorting algorithms.
+The objective of this Lab is to understand the basics for SCM
 
-## Scenario:
-In this assignment, we are going to be investigating the actual performance of different sorting methods.  This needs to be written using C++.
+## Task
+Make a repo on github (you need to make an account)
+clone the repo to linux working env
+Copy into the repo with some code (just grab any lab, or even my starter code).
+Add the code to the repo
+git add
+git commit -a
+git push NOTE for the push you will need to setup github token (classic)
+Ok now we have a simulate developement ENV, and have show how to push to main branch. THis is not typical in industry.
 
-## Requirements:
-1.	Create a program that generate an array of sizes n= 10, 100, 500, 5000 and 25000 items.  Your program should populate those arrays with randomly generated integers with a value between 0 and the 2n where n is the size of the array.  Create an implementation for the following sort operations.
+git checkout -b "some cool name you come up with here"
+modify any of the source file with any change
+git add
+git commit -a
+git push --set-upstream origin "some cool name you come up with here"
+OK now we have to go make a pull request on the website
 
-  *	Bubble sort
-  *	Insertion sort
-  *	Merge-sort
-  *	Quicksort
-  *	Radix-sort // you probably want to consider storing the values as strings
-  
-2.	WRite a UnitTest for each of the sort operations.  ANd then Test and record the time the sort takes to complete.  You should test each on the same unsorted array to get the best comparison.  You should do this for each array size (from requirement 1) a minimum of 10 times.  Your test should use the chrono library’s [high_resolution_clock](http://www.cplusplus.com/reference/chrono/high_resolution_clock/) class.  The following example of how to do this in nanoseconds is found on [Stack Overflow](http://stackoverflow.com/questions/3220477/how-to-use-clock-in-c).  Only the time in the 5 sort functions should be measured.
+goto your repo on github
+Make pull request
+No normally there is some protections on randos trashing your repo, but let's assume it passed
 
-```c++
-#include <iostream>
-#include <chrono>
-typedef std::chrono::high_resolution_clock Clock;
-	
-int main()
-{
-    <YOUR Data Generation Here>
-    auto t1 = Clock::now();
-	  <Some interesting code that does something>
-	  auto t2 = Clock::now();
-	  std::cout << "Delta t2-t1: " 
-	        << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count()
-	        << " nanoseconds" << std::endl;
-}
+Close your merge reqeust
+Almost done now let's mimic an active branch with mulitple cooks (NOTE the following portion can be skipped, as of 11-28-2023 it doesn't cause a merge)
 
+git checkout -b "another cool name you come up with here"
+Make a change to source file
+Now using the web view, from main branch edit that source file with a different change (a comment change) but on the same line
+git add .
+git commit -a
+git push
+Make the merge reqeust and see we have a merges
+Resolve merges (see the advice on merge request page)
+Get your code to the repo
+Submission
+Send the repo link so we can see the merge requests.
 
+## Alt Task
+If you have already submitted to a repo and have done a pull request that has been merged. You can post the link the repo, your user name, and the pull request showing me that it was meged.
 
-```
-
-Use the output of this to make a table similar to (these numbers are completely fabricated) the following with the values showing the average of all your runs for this test type:
-
-```
-	               10	     100	      500	        5000	            25000
-Bubble sort	    10 ms	   1000 ms	25004 ms	2500312 ms	        > 5 minutes
-Insertion sort	11 ms	   708 ms	  45646 ms	98984 ms	          98798797 ms
-Merge-sort	    50 ms	   652 ms	  44646 ms	Ran out of memory   Ran out of memory
-Quicksort	      42 ms	   753 ms	  88544 ms	990090 ms	          Ran out of memory
-Radix-sort	    512 ms	 1101 ms	 2002 ms	77757 ms	          7747474 ms
-```
-
-If any 1 test run takes longer than 5 minutes, you may discontinue that test and record that the time took longer than 5 minutes.  Likewise, should any test crash due to running out of memory, record that as well.  Graph this data and explain how well or poorly it matches your expectations for performance given the known Big O notation for the given sort algorithms.  Include what you expected for time for each of the array sizes based on the results for array size of 10.
-
-
-## Submission:
-Submit all source code files and any required data files in a tar file.  Include a write up as a PDF including:
-* Table and graph from requirement 2 along with your writeup of the results from that requirement.
-* Submission should include all source and PDF.
-* Don't forget participation matrix
-
-## Grading:
-1. 20% - Requirement 1 is completed and working
-2. 40% - Code for Requirement 2 is completed and working
-3. 30% - Analysis for Requirement 2 explains your results including any unexpected results.
-4. 10% - Code is well formatted, well commented and follows a reasonable style.
-If program fails to compile, the grade will be limited to a max grade of 50%.
+## Extra Credit
+If you setup your repo to use actions to build and run the tests, you can obtain an extra 50 points to be used towards you labs. Use the actions file from Lab00. And follow steps done in lecture lab (it's recorded so you can obtain the recording from canvas).
 
 
 
