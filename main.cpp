@@ -15,6 +15,8 @@ int main()
     // Declare a vector in order to store all values for each iteration
     vector<vector<long>> storedValues(5, vector<long>(5, 0));
 
+    cout << "I MADE A CHANGE" << endl;
+
     for (int i = 0; i < 10; i++)
     {
         // Creates the required datasets with correctly generated data
